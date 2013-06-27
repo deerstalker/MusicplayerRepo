@@ -47,7 +47,7 @@ public class MyService extends Service implements AudioManager.OnAudioFocusChang
 //		       // could not get audio focus.
 //			
 //		}
-		player.start();
+//		player.start();
 	}
 
 	@Override
