@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/AbsoluteLayout01"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <ListView
+        android:id="@id/android:list"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:drawSelectorOnTop="false" />
+
+    <Button
+        android:id="@+id/last"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_x="10px"
+        android:layout_y="70px"
+        android:background="@drawable/last" >
+    </Button>
+
+    <Button
+        android:id="@+id/stop"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_x="80px"
+        android:layout_y="70px"
+        android:background="@drawable/stop" >
+    </Button>
+
+    <Button
+        android:id="@+id/start"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_x="150px"
+        android:layout_y="70px"
+        android:background="@drawable/start" >
+    </Button>
+
+    <Button
+        android:id="@+id/pause"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_x="220px"
+        android:layout_y="70px"
+        android:background="@drawable/pause" >
+    </Button>
+
+    <Button
+        android:id="@+id/next"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_x="290px"
+        android:layout_y="70px"
+        android:background="@drawable/next" >
+    </Button>
+
+    <EditText
+        android:id="@+id/statusText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="10px"
+        android:layout_y="170px"
+        android:text="@+string/statusText" >
+    </EditText>
+
+</AbsoluteLayout>
