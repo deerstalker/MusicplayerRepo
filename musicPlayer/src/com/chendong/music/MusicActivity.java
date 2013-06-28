@@ -6,7 +6,6 @@ import java.util.List;
 
 import android.app.ListActivity;
 import android.content.Context;
-import android.content.Intent;
 import android.media.AudioManager;
 import android.media.AudioManager.OnAudioFocusChangeListener;
 import android.media.MediaPlayer;
@@ -31,25 +30,20 @@ public class MusicActivity extends ListActivity implements
 	private static final String TAG = "MusicActivity";
 	private List<String> myMusicList = new ArrayList<String>();
 	private int currentListItem = 0;
-	private static final String MUSIC_PATH = new String("/sdcard/");
 
 	private String remoteMusicURI = "http://dc220.4shared.com/img/302542695/d0964170/" +
 			"dlink__2Fdownload_2FxdlEtbxq_3Ftsid_3D20101119-54721-4807ddd0/preview.mp3";
 	// some variables
-	private boolean canBreak = false;
 
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
-//		myMediaPlayer = new MediaPlayer();
 		myMediaPlayer = new MediaPlayer();
 		findView();
 		musicList();
 		listener();
-//		playMusicUseCreate();
-//		prepareMusicAsynchronous();
 	}
 
 	/*
@@ -106,31 +100,8 @@ public class MusicActivity extends ListActivity implements
 
 	}
 
-	/*
-	 * use create method, no need to prepare
-	 */
-	void playMusicUseCreate() {
-		// res/raw
-		// noiseMediaPlayer = MediaPlayer.create(this,
-		// R.raw.mariahcareyohsanta);;
-		/*
-		 * noiseMediaPlayer = MediaPlayer.create(this, Uri.parse(
-		 * "http://cd04.static.jango.com/music/07/0563/0705635592.mp3"));
-		 */
-		// noiseMediaPlayer.start();
-		 startService(new Intent(this, MyService.class));
-	}
 
 	void musicList() {
-//		File home = new File(MUSIC_PATH);
-//		if (home.listFiles(new MusicFilter()).length > 0) {
-//			for (File file : home.listFiles(new MusicFilter())) {
-//				myMusicList.add(file.getName());
-//			}
-//			ArrayAdapter<String> musicList = new ArrayAdapter<String>(
-//					MusicActivity.this, R.layout.musicitme, myMusicList);
-//			setListAdapter(musicList);
-//		}
 		myMusicList.add("LocalMusic");
 		myMusicList.add("RemoteMusic");
 		ArrayAdapter<String> musicList = new ArrayAdapter<String>(
@@ -204,7 +175,8 @@ public class MusicActivity extends ListActivity implements
 	}
 
 	/*
-	 * type = 0:localtype = 1:remote
+	 * currentListItem = 0:local
+	 * currentListItem = 1:remote
 	 */
 	void playMusic(int currentListItem) {
 		if (myMusicList.size() == 0) {
